@@ -1,114 +1,151 @@
-# Hashchat
+# 🦅 Hashchat: The Elite Cryptographic Command Center
 
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Hashchat/Frontend/Hashchat/App/Resources/Assets.xcassets/AppIcon.appiconset/Hashchat%202.png" alt="Logo" width="120" height="120" />
+> **"Privacy is not a privilege, it is a mathematical certainty."**
 
-### App Name: Hashchat
-##### Hashchat is a Swift/SwiftUI-powered real-time encrypted chat application featuring classical ciphers implemented manually and modern cryptography using industry-standard frameworks.
+<div align="center">
+  <img src="https://github.com/eneseken95/Hashchat/blob/main/Hashchat/Frontend/Hashchat/App/Resources/Assets.xcassets/AppIcon.appiconset/Hashchat%202.png" alt="Hashchat Logo" width="160" height="160" />
+  <br/>
+  <a href="https://github.com/bahattinyunus/Hashchat/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
+  <a href="https://github.com/bahattinyunus/Hashchat/actions"><img src="https://img.shields.io/github/actions/workflow/status/bahattinyunus/Hashchat/ci.yml?branch=main" alt="CI Status"></a>
+  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.9-orange.svg" alt="Swift"></a>
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.11-yellow.svg" alt="Python"></a>
+  <br/>
+  <br/>
+</div>
 
-#### 📱 Application Pages:
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot1.png" alt="Screenshoots" width="350" height="550" />
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot2.png" alt="Screenshoots" width="350" height="550" />
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot3.png" alt="Screenshoots" width="350" height="550" />
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot4.png" alt="Screenshoots" width="350" height="550" />
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot5.png" alt="Screenshoots" width="350" height="550" />
+## 📚 Table of Contents
+1. [Introduction](#-introduction)
+2. [What is Hashchat?](#-what-is-hashchat)
+3. [The Cryptography Curriculum](#-the-cryptography-curriculum)
+    - [Symmetric Ciphers](#symmetric-ciphers-the-classics)
+    - [Asymmetric Power (RSA)](#asymmetric-power-e2ee)
+4. [Hashchat 2.0 Architecture](#-hashchat-20-architecture)
+    - [Ironclad Persistence](#ironclad-persistence-sqlite)
+    - [Elite Intelligence (Loguru)](#elite-intelligence-logging)
+5. [Installation & Deployment](#-installation--deployment)
+6. [Contributing](#-contributing)
 
-#### 🔍 Key Features:
-##### -> 🔐 Multiple encryption algorithms (Caesar, Vigenère, Hill, Columnar, Rail Fence, Euclid)
-##### -> 🔒 Advanced cryptography support:
-##### • AES-128 (CTR Mode) — pure Swift implementation
-##### • DES (CBC Mode) — full manual implementation
-##### • RSA-2048 (E2EE) — production-ready end-to-end encryption
-##### -> 🧩 Dynamic cipher selection with custom key inputs for each algorithm
-##### -> 🔄 Real-time encrypted messaging using WebSockets
-##### -> 🧊 Clean and modern SwiftUI interface with smooth transitions
-##### -> ⚙️ Modular architecture (MVVM + Clean Architecture)
-##### -> 🧠 Educational design: perfect for learning how encryption works by actually sending encrypted messages
-##### -> 📡 Automatic local encryption/decryption pipeline before and after message transfer
+---
 
-#### 🏗️ Architecture & Technology Stack
-##### Frontend:
-##### -> Language: Swift
-##### -> UI Framework: SwiftUI
-##### -> Architecture: MVVM + Clean Architecture
-##### -> Reactive: Combine framework
-##### -> Security: iOS Keychain (hardware-encrypted storage)
-##### -> Networking: URLSession (REST), WebSocket (real-time)
-##### -> Cryptography: Apple Security Framework + manual implementations
+## 🚀 Introduction
 
-##### Backend:
-##### -> Language: Python
-##### -> Framework: FastAPI
-##### -> Architecture: Clean Architecture (Layered Design)
-##### --> Models: Pydantic validation
-##### --> Routes: API endpoints (REST + WebSocket)
-##### --> Services: Business logic
-##### --> Database: In-memory storage (RAM)
-##### -> Real-time: WebSocket message relay
-##### -> API Docs: Auto-generated (Swagger UI)
+Welcome to **Hashchat**, a state-of-the-art educational platform disguised as a messaging app. We didn't just build a chat app; we built a **Digital Laboratory** for mastering the art of cryptography.
 
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot7.png" alt="Screenshoots" width="350" height="550" />
+Whether you are a student, a security researcher, or a privacy privacy enthusiast, Hashchat allows you to **visualize** and **experiment** with the mathematical engines that secure the modern internet.
 
-#### 🔐 AES & DES — Manual vs CommonCrypto Implementations:
-##### -> Hashchat includes both manual and library-based cryptographic systems for comparison and educational purposes.
-##### Manual Implementations:
-##### -> AES-128 CTR and DES CBC fully written in Swift, including round functions, S-boxes, permutations, and key scheduling.
-##### CommonCrypto Implementations:
-##### -> High-performance AES-128 CTR and DES CBC using Apple’s optimized cryptographic engine.
-##### Built-in Benchmark System:
-##### -> Measures and compares execution times of manual vs CommonCrypto implementations directly inside the app.
+## 📱 What is Hashchat?
 
-##### Example output:
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot6.png" alt="Screenshoots" width="350" height="550" />
+Hashchat is a dual-stack graphical application:
+- **Frontend (iOS/Swift)**: A beautiful, modern interface for composing encrypted messages.
+- **Backend (Python/FastAPI)**: A robust, zero-knowledge relay server that connects users without ever seeing their raw data.
+- **Protocol**: Real-time **WebSockets** for instant communication.
 
-#### 🔑 RSA End-to-End Encryption (E2EE)
-##### -> Hashchat features production-grade End-to-End Encryption using RSA — mirroring security standards of apps like WhatsApp and Signal.
+### 🌟 Key Features
+- **Manual Cipher Implementations**: We wrote AES and DES from scratch (S-Boxes, Permutations) so you can read the code and learn how they work bit-by-bit.
+- **Hybrid Cryptography**: Combine classical ciphers (Caesar, Vigenère) with military-grade algorithms (AES-128, RSA-2048).
+- **End-to-End Encryption (E2EE)**: Messages are encrypted on your device and only decrypted on the recipient's device. The server sees nothing but noise.
 
-##### How it works:
-##### -> Dynamic Key Generation:
-- Each user gets a unique 2048-bit RSA keypair generated on first use
-- Generated using Apple's `SecKeyCreateRandomKey()` with RSA-OAEP-SHA256
-- No manual key generation or external tools required
+---
 
-##### -> Secure Storage:
-- Private Key: Stored in iOS Keychain with hardware encryption (`kSecAttrAccessibleWhenUnlockedThisDeviceOnly`)
-- Public Key: Distributed via backend REST API for secure message exchange
-- Keys persist across app restarts and device reboots
+## 🎓 The Cryptography Curriculum
 
-##### -> Automatic Registration:
-- On first RSA use, user is auto-registered with backend
-- Public key is uploaded to server for other users to fetch
-- Backend provides key distribution via REST endpoints:
-  - `POST /register` — Register user with public key
-  - `GET /users/{username}/public-key` — Fetch recipient's public key
+Hashchat is designed to teach. Here is your syllabus:
 
-##### -> Message Flow:
-1. Alice types "Hello Alex"
-2. App fetches Alex's public key from backend
-3. Message encrypted client-side with Alex's public key (RSA-OAEP-SHA256)
-4. Encrypted ciphertext sent via WebSocket
-5. Alex receives encrypted message
-6. Alex's app decrypts using his private key (stored in Keychain)
-7. Alex sees "Hello Alex"
+### Symmetric Ciphers (The Classics)
+In symmetric encryption, the **same key** is used to lock and unlock the message.
+- **Caesar Cipher**: Shifting the alphabet. The "Hello World" of crypto.
+- **Vigenère**: Polyalphabetic substitution. The "Unbreakable Cipher" of the 19th century.
+- **AES (Advanced Encryption Standard)**: The gold standard. Included as a pure Swift implementation to study the `ShiftRows`, `SubBytes`, and `MixColumns` operations.
 
-<img src="https://github.com/eneseken95/Hashchat/blob/main/Screenshots/Screenshot8.png" alt="Screenshoots" width="350" height="550" />
+### Asymmetric Power (E2EE)
+How do two people share a secret key without meeting? Enter **RSA**.
 
-##### -> Security Features:
-- Zero-knowledge server (backend cannot decrypt messages)
-- Private keys never leave the device
-- Hardware-backed Keychain storage
-- 2048-bit RSA with modern OAEP padding
-- Unique keypair per user (no shared keys)
+#### The Handshake Protocol 🤝
+1. **Key Generation**: When you install Hashchat, your device generates a **Public Key** (shareable) and a **Private Key** (secret).
+2. **Registration**: Your Public Key is sent to the Hashchat Server.
+3. **Transmission**:
+   - Alice wants to message Bob.
+   - Hashchat fetches Bob's **Public Key**.
+   - Hashchat encrypts the message with Bob's Public Key.
+4. **Decryption**: Only Bob's **Private Key** can unlock the message.
 
-##### -> Educational Purpose:
-- Demonstrates real-world public-key cryptography
-- Shows difference between symmetric (AES/DES) and asymmetric (RSA) encryption
-- Teaches key management, DER formats, and E2EE pipelines
-- Illustrates how modern messaging apps (WhatsApp, Signal) implement E2EE
+```mermaid
+sequenceDiagram
+    participant Alice
+    participant Server
+    participant Bob
+    
+    Note over Alice, Bob: Establishing Secure Channel
+    Alice->>Server: Get Bob's Public Key
+    Server-->>Alice: Bob's Public Key
+    Alice->>Alice: Encrypt "Hello" with Bob's Key
+    Alice->>Server: Send Ciphertext
+    Server->>Bob: Forward Ciphertext
+    Bob->>Bob: Decrypt with Private Key
+```
 
-#### 🛡️ Security Validation with Wireshark
-##### -> To verify that messages are truly encrypted end-to-end, I used Wireshark to inspect live WebSocket packets.
-- All transmitted messages appear as encrypted byte streams
-- No plain-text data ever leaves the device
-- Validates the integrity of AES, DES, and RSA implementations
+---
 
-This project is licensed under the Apache License 2.0. Copyright © 2025, Enes Eken.
+## 🏗️ Hashchat 2.0 Architecture
+
+With the release of **Hashchat 2.0**, we have upgraded the system to professional standards.
+
+### Ironclad Persistence (SQLite) 💾
+Your identity is now permanent.
+- **Technology**: **SQLAlchemy** ORM + **SQLite**.
+- **Benefit**: User accounts and public keys persist across server restarts. The database file `hashchat.db` serves as the single source of truth.
+
+### Elite Intelligence (Logging) 🧠
+Monitoring is key to defense.
+- **Technology**: **Loguru**.
+- **Benefit**: High-performance, structured logging. Every event—registration, message relay, error—is captured with timestamp and severity level.
+- **Visuals**: Color-coded console output for instant anomaly detection.
+
+### CI/CD Pipeline ⚙️
+Code quality is enforced automatically.
+- **GitHub Actions**: Every commit triggers a suite of backend tests (`pytest`).
+- **Safety**: No broken code reaches the `main` branch.
+
+---
+
+## 🛠️ Installation & Deployment
+
+### 1. Backend (The Nervous System)
+The brain of the operation. Runs on Python 3.11+.
+
+```bash
+# Clone the repo
+git clone https://github.com/bahattinyunus/Hashchat.git
+cd Hashchat/Hashchat/Backend
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch the Elite Server
+uvicorn main:app --reload
+```
+*You will see the database initialize and the logs start flowing.*
+
+### 2. Frontend (The Interface)
+The face of the operation. Requires macOS + Xcode.
+
+1. Open `Hashchat/Hashchat/Frontend/Hashchat.xcodeproj` in Xcode.
+2. Select your simulator context (e.g., iPhone 15 Pro).
+3. Press **Cmd + R** to build and run.
+4. *Optional*: Run two simulators to chat with yourself!
+
+---
+
+## 🤝 Contributing
+
+We welcome all operatives. Whether you want to add a new cipher (maybe **ChaCha20**?) or improve the UI:
+1. Read [CONTRIBUTING.md](CONTRIBUTING.md).
+2. Follow the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+3. Open a Pull Request.
+
+---
+
+### 📜 License
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
+
+> **"We build the tools of freedom."** - Hashchat Team
