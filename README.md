@@ -40,6 +40,8 @@ root@hashchat-command-center:~$ ./initialize_protocol.sh --verbose --level=MAXIM
 > SİSTEM HAZIR. "CAM KUTU" (GLASS-BOX) PROTOKOLÜ DEVREDE.
 ```
 
+> **🔴 DİKKAT:** Bu proje sadece koddan ibaret değildir. Gelecek planlarımızı ve 2030 hedeflerimizi okumak için [**VİZYON 2030 (VISION.md)**](VISION.md) belgesini inceleyiniz.
+
 ---
 
 ## 🎓 HASHCHAT AKADEMİSİ: BÜYÜK ANSİKLOPEDİ (MAGNUM OPUS EDITION)

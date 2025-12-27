@@ -1,34 +1,36 @@
-# 🌐 VISION 2030: The Digital Sanctuary
+# 🌐 VİZYON 2030: Dijital Egemenlik Kalesi
 
-> "Privacy is not an option, it is proof of our existence."
+> **"Mahremiyet bir seçenek değil, varoluşumuzun matematiksel kanıtıdır."**
 
-## 🚀 Mission Statement
-To establish **Hashchat** as the global standard for sovereign, unbreakable digital communication. We are not just building an app; we are constructing a **Digital Fortress** where every bit operates under the laws of absolute mathematical secrecy.
+## 🚀 Misyon Bildirgesi
+Hashchat'i, egemen ve kırılmaz dijital iletişimin küresel standardı haline getirmek. Biz sadece bir uygulama yapmıyoruz; her bitin mutlak matematiksel gizlilik yasaları altında çalıştığı bir **Dijital Kale** (Digital Fortress) inşa ediyoruz.
 
-## 🔮 Strategic Pillars
+Amacımız, herhangi bir merkezi otoriteye (devletler, şirketler, servis sağlayıcılar) güvenmek zorunda kalmadan, vatandaşların kendi aralarında **güvenli iletişim** kurabilmesini sağlamaktır.
 
-### 1. Quantum-Resistant Sovereignty 🛡️
-As we approach the post-quantum era, Hashchat will evolve beyond RSA-2048.
-- **Target**: Integrate Post-Quantum Cryptography (PQC) standards (NIST Crystals-Kyber).
-- **Goal**: Ensure messages sent today remain secure forever, even against future quantum adversaries.
+## 🔮 Stratejik Sütunlar
 
-### 2. The Decentralized Nexus 🕸️
-Transition from a centralized WebSocket server to a fully decentralized mesh network.
-- **Architecture**: Peer-to-Peer (P2P) relay nodes.
-- **Resilience**: Zero single points of failure. The network survives even if the central command goes dark.
+### 1. Kuantum Dirençli Egemenlik (Quantum-Resistant Sovereignty) 🛡️
+Kuantum bilgisayar çağına yaklaşırken, RSA-2048 bir gün kırılabilir hale gelecektir. Hashchat, bu geleceğe şimdiden hazırlanıyor.
+*   **Hedef**: NIST standardı olan "Crystals-Kyber" gibi Post-Quantum Kriptografi (PQC) standartlarını sisteme entegre etmek.
+*   **Amaç**: Bugün gönderilen mesajların, 20 yıl sonra süper bilgisayarlarla bile çözülemez kalmasını sağlamak.
 
-### 3. Elite Educational Command Center 🧠
-Transform the platform into a "Live Cryptography Lab."
-- **Interactive Visualization**: Real-time visualizers for AES/DES rounds.
-- **Academy**: Integrated modules teaching the art of cipher warfare to the next generation of privacy architects.
+### 2. Merkeziyetsiz Ağ (The Decentralized Nexus) 🕸️
+Tek bir merkezi sunucudan (şu anki WebSocket relay), tamamen dağıtık bir yapıya geçiş.
+*   **Mimari**: Eşler Arası (P2P - Peer to Peer) röle düğümleri.
+*   **Dayanıklılık**: Tek bir "kapatma düğmesi" (Kill Switch) olmamalı. Merkezi komuta çökse bile, ağ hayatta kalmalı ve iletişim devam etmeli.
 
-## 🗺️ Roadmap to Greatness
+### 3. Elit Eğitim Komuta Merkezi (Elite Educational Command Center) 🧠
+Platformu yaşayan bir "Kriptografi Laboratuvarına" dönüştürmek.
+*   **Görselleştirme**: AES/DES döngülerinin ekranda gerçek zamanlı animasyonlarla izlenmesi.
+*   **Akademi**: Geleceğin mahremiyet mimarlarına şifre savaş sanatını öğreten entegre eğitim modülleri.
 
-- **Phase I (Current)**: Solidify the Clean Architecture foundation (iOS + Python).
-- **Phase II (2025 Q3)**: Introduce Multi-Device Synchronization via encrypted cloud blobs.
-- **Phase III (2026)**: Verify "Zero-Knowledge" proof protocols for user authentication.
-- **Phase IV (2030)**: Complete P2P Mesh limit.
+## 🗺️ Büyük Yol Haritası (Roadmap to Greatness)
+
+*   **Evre I (Mevcut Durum)**: Temiz Mimari (Clean Architecture) temelinin atılması. (Tamamlandı ✔️)
+*   **Evre II (2025 Q3)**: Şifreli bulut paketleri (Encrypted Blobs) üzerinden Çoklu Cihaz Senkronizasyonu.
+*   **Evre III (2026)**: Kullanıcı kimlik doğrulaması için "Sıfır Bilgi İspatı" (Zero-Knowledge Proof - ZKP) protokolleri.
+*   **Evre IV (2030)**: Tamamen otonom P2P Mesh Ağına geçiş.
 
 ---
 
-*This document serves as the North Star for all development. Every line of code written must serve the ultimate goal of user sovereignty.*
+*Bu belge, tüm geliştirmelerimiz için Kuzey Yıldızı (North Star) niteliğindedir. Yazılan her satır kod, nihai kullanıcı egemenliğine hizmet etmek zorundadır.*
