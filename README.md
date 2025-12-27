@@ -3,185 +3,159 @@
 > **"Mahremiyet bir ayrıcalık değil, matematiksel bir kesinliktir."** - *Cypherpunk Manifestosu*
 
 <div align="center">
-  <img src="assets/banner.png" alt="Hashchat Elite Banner" width="100%" />
+  <img src="assets/banner.png" alt="Hashchat Elite Banner" width="100%" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);" />
   <br/>
   <br/>
-  <a href="https://github.com/bahattinyunus/Hashchat/blob/main/LICENSE"><img src="https://img.shields.io/badge/Lisans-Apache%202.0-blue.svg" alt="License"></a>
-  <a href="https://github.com/bahattinyunus/Hashchat/actions"><img src="https://img.shields.io/github/actions/workflow/status/bahattinyunus/Hashchat/ci.yml?branch=main" alt="CI Status"></a>
-  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.9-orange.svg" alt="Swift"></a>
-  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.11-yellow.svg" alt="Python"></a>
-  <a href="https://developer.apple.com/documentation/security"><img src="https://img.shields.io/badge/Security-CommonCrypto-green.svg" alt="Security"></a>
+  <!-- Rozetler: Projenin gücünü gösterir -->
+  <a href="https://github.com/bahattinyunus/Hashchat/blob/main/LICENSE"><img src="https://img.shields.io/badge/Lisans-Apache%202.0-blue.svg?style=for-the-badge&logo=apache" alt="License"></a>
+  <a href="https://github.com/bahattinyunus/Hashchat/actions"><img src="https://img.shields.io/github/actions/workflow/status/bahattinyunus/Hashchat/ci.yml?branch=main&style=for-the-badge&logo=github-actions" alt="CI Status"></a>
+  <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-5.9-orange.svg?style=for-the-badge&logo=swift" alt="Swift"></a>
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.11-yellow.svg?style=for-the-badge&logo=python" alt="Python"></a>
+  <a href="https://developer.apple.com/documentation/security"><img src="https://img.shields.io/badge/Security-CommonCrypto-green.svg?style=for-the-badge&logo=apple" alt="Security"></a>
   <br/>
   <br/>
 </div>
 
-## 📚 Hashchat Ansiklopedisi
-Bu doküman hem bir kullanım kılavuzu hem de ileri seviye bir kriptografi ders kitabıdır. Projenin amacı, ticari uygulamaların arkasına saklanan güvenlik mekanizmalarını şeffaf bir şekilde öğretmektir.
+---
 
-### İçindekiler
-1. [Giriş ve Felsefe](#-giriş-ve-felsefe)
-2. [Hashchat Nedir?](#-hashchat-nedir)
-3. [🛠️ Teknoloji Yığını (Derinlemesine Analiz)](#-teknoloji-yığını-derinlemesine-analiz)
-    - [Frontend Mimarisi (Swift/iOS)](#frontend-mimarisi-swiftios)
-    - [Backend Mimarisi (Python/FastAPI)](#backend-mimarisi-pythonfastapi)
-4. [🔐 Kriptografi Motoru](#-kriptografi-motoru)
-    - [Simetrik Şifreleme (AES & DES - Matematiksel Temeller)](#simetrik-şifreleme-aes--des)
-    - [Asimetrik Şifreleme (RSA - Anahtar Teorisi)](#asimetrik-şifreleme-rsa)
-5. [🏗️ Mimari 2.0: Sistem Tasarımı](#-mimari-20-sistem-tasarımı)
-    - [Ironclad Persistence (Kalıcı Hafıza)](#ironclad-persistence-sqlite)
-    - [Elite Intelligence (İstihbarat ve Loglama)](#elite-intelligence-loguru)
-6. [Kurulum ve Operasyon](#-kurulum-ve-operasyon)
-7. [Katkıda Bulunma](#-katkıda-bulunma)
+# 🎓 Hashchat Akademisi'ne Hoşgeldiniz
+Bu doküman sadece bir "Beni Oku" dosyası değildir; burası modern siber güvenliğin kalbine açılan kapıdır. **Hashchat**, ticari mesajlaşma uygulamalarının (WhatsApp, Signal) arkasındaki "sihri" bozar ve size **saf matematiği** gösterir.
+
+### 📑 Eğitim Müfredatı (İçindekiler)
+1. **[Bölüm 1: Felsefe ve Vizyon](#-bölüm-1-felsefe-ve-vizyon)** — Neden bu aracı yaptık?
+2. **[Bölüm 2: Sistem Mimarisi (Blueprint)](#-bölüm-2-sistem-mimarisi-blueprint)** — SwiftUI ve FastAPI'nin dansı.
+3. **[Bölüm 3: Kriptografi Motoru (The Engine)](#-bölüm-3-kriptografi-motoru-the-engine)** — AES ve RSA nasıl çalışır?
+4. **[Bölüm 4: Veri Kalıcılığı ve İstihbarat](#-bölüm-4-veri-kalıcılığı-ve-istihbarat)** — SQLite ve Loguru.
+5. **[Bölüm 5: Saha Operasyonu (Kurulum)](#-bölüm-5-saha-operasyonu-kurulum)** — Kendi sunucunuzu başlatın.
 
 ---
 
-## 🚀 Giriş ve Felsefe
+## 🏛️ Bölüm 1: Felsefe ve Vizyon
 
-**Hashchat**, modern internetin güvenliğini sağlayan matematiksel motorları görselleştirmek ve denemek için tasarlanmış bir **Dijital Laboratuvardır**.
+**"Cam Kutu" (Glass-Box) Teorisi**
+Çoğu güvenlik uygulaması bir "Kara Kutu"dur. Güvenli olduklarını iddia ederler, ancak kanıtlayamazsınız. Hashchat şeffaftır.
+*   Bir anahtarın (Key) nasıl üretildiğini **görürsünüz**.
+*   Şifreli verinin (Ciphertext) ağda nasıl aktığını **izlersiniz**.
+*   Matematiğe dokunursunuz.
 
-Çoğu mesajlaşma uygulaması (WhatsApp, Signal) güvenlidir, ancak "kara kutu" gibidirler. Nasıl çalıştıklarını göremezsiniz. Hashchat ise "cam kutu" (glass-box) yaklaşımını benimser. Şifreleme anahtarlarının nasıl üretildiğini, AES baytlarının nasıl karıştırıldığını ve bir mesajın ağ üzerinde nasıl seyahat ettiğini size gösterir.
-
-## 📱 Hashchat Nedir?
-
-Hashchat, güvenli bir WebSocket rölesi üzerinden iletişim kuran çift katmanlı bir sistemdir.
-- **Uçtan Uca Şifreleme (E2EE)**: Mesajlar cihazınızdan çıkmadan önce şifrelenir.
-- **Sıfır Bilgi (Zero-Knowledge)**: Sunucu, mesajların içeriğini asla bilemez. Sadece şifreli veri paketlerini (ciphertext) taşır.
-- **Güvenli Taşıma**: Tüm trafik WSS (WebSocket Secure) protokolü ile korunur.
+> **Hedef**: 2030 yılına kadar siber egemenlik bilincine sahip 1000 geliştirici yetiştirmek.
 
 ---
 
-## 🛠️ Teknoloji Yığını (Derinlemesine Analiz)
+## 🏗️ Bölüm 2: Sistem Mimarisi (Blueprint)
 
-### Frontend Mimarisi (Swift/iOS)
-iOS uygulaması, **Clean Architecture** prensipleri ve **MVVM** (Model-View-ViewModel) deseni üzerine inşa edilmiştir.
+Bu proje, endüstri standardı **Clean Architecture** prensipleriyle tasarlanmıştır.
 
-#### 1. SwiftUI & Combine Framework
-Arayüz, durum tabanlı (state-driven) bir yapı olan **SwiftUI** ile kodlanmıştır.
-- **View (Görünüm)**: `ChatView` gibi yapılar, `ChatViewModel` üzerindeki değişiklikleri dinler.
-- **Combine**: Asenkron veri akışlarını yönetmek için kullanılır. WebSocket üzerinden bir mesaj geldiğinde, bu veri bir `PassthroughSubject` boru hattından (pipeline) geçer ve saniyenin binde birinde ekrana yansır.
+### 📱 Frontend: iOS (Swift)
+Kullanıcı arayüzü, Apple'ın en yeni teknolojileriyle donatılmıştır.
 
-#### 2. CoreCrypto & Security Framework
-Standart şifreleme işlemleri için Apple'ın C tabanlı `CommonCrypto` kütüphanesi ve `Security.framework` kullanılır.
-- **Keychain (Anahtarlık)**: RSA Özel Anahtarı (Private Key) burada saklanır. Bu, donanım tabanlı bir kasadır. Telefon "jailbreak" yapılsa bile, bu anahtarların donanım seviyesinden çıkarılması matematiksel olarak imkansıza yakındır.
+| Teknoloji | Görevi | Neden Seçtik? |
+| :--- | :--- | :--- |
+| **SwiftUI** | Deklaratif UI | Animasyonlar ve durum yönetimi (State Management) için rakipsiz. |
+| **Combine** reaktif Framework | Veri Akışı | WebSocket'ten gelen canlı veri paketlerini saniyenin binde birinde işlemek için. |
+| **Hardware CoreCrypto** | Güvenlik | Cihazın "Secure Enclave" işlemcisini kullanarak anahtarları donanım seviyesinde korur. |
 
-### Backend Mimarisi (Python/FastAPI)
-Sunucu tarafı, yüksek performanslı bir mesaj rölesi olarak çalışır.
+### 🧠 Backend: Python (FastAPI)
+Sunucu tarafı, asenkron ve yüksek performanslı bir dijital röledir.
 
-#### 1. FastAPI (ASGI)
-- **AsyncIO**: Eski nesil Flask (WSGI) yerine, `Starlette` ve `Pydantic` üzerine kurulu FastAPI kullanılmıştır. Bu yapı, Python'un `async/await` sözdizimini kullanarak tek bir işlemci çekirdeğinde binlerce eşzamanlı WebSocket bağlantısını yönetebilir.
-- **WebSocketEndpoint**: Kalıcı, çift yönlü bir iletişim kanalı sağlar.
-
-#### 2. SQLAlchemy 2.0 (ORM)
-- **Modern Veritabanı Yönetimi**: `DeclarativeBase` sistemi kullanılarak modern Python tip güvenliği sağlanmıştır.
-- **Oturum Yönetimi (Session Scoping)**: Her istek (request) için izole bir veritabanı oturumu açılır ve işlem bitince otomatik kapatılır. Bu, "connection leak" (bağlantı sızıntısı) problemlerini %100 önler.
-
-#### 3. Loguru (İstihbarat)
-- **Felsefe**: Loglar okunabilir olmalıdır. Sistem, her olayı (kayıt, mesaj iletimi, hata) renk kodlu ve yapılandırılmış formatta kaydeder. Dosyalar her 500MB'da bir otomatik olarak arşivlenir.
+*   **Protokol**: `wss://` (WebSocket Secure). HTTP gibi "iste-cevap al" değildir; sürekli açık bir hattır.
+*   **Hız**: `AsyncIO` sayesinde tek bir çekirdekte binlerce eşzamanlı bağlantıyı yönetir.
 
 ---
 
-## 🔐 Kriptografi Motoru
+## 🔐 Bölüm 3: Kriptografi Motoru (The Engine)
 
-### Simetrik Şifreleme (AES & DES)
+Burası işin mutfağıdır. Hashchat, hem modern hem de klasik şifreleme algoritmalarını içerir.
 
-#### AES (Advanved Encryption Standard)
-Hashchat, AES-128 algoritmasının **Saf Swift (Pure Swift)** implementasyonunu içerir. Donanım hızlandırmalı AES'ten 1000 kat daha yavaştır, ancak **eğitim** için mükemmeldir.
+### ⚔️ Simetrik Savaş Sanatı: AES-128
+**Advanced Encryption Standard (AES)**, ABD hükümetinin gizli verilerini korumak için kullandığı standarttır. Hashchat, bu algoritmayı eğitim amacıyla **MANUEL OLARAK** (sıfırdan) Swift dilinde yazmıştır.
 
-**AES Döngüsünün 4 Aşaması:**
-1.  **SubBytes (Bayt Değiştirme)**: Her bayt, S-Box adı verilen özel bir tablo kullanılarak başka bir baytla değiştirilir. Bu, kriptografide **Konfüzyon (Karışıklık)** sağlar.
-2.  **ShiftRows (Satır Kaydırma)**: Matrisin son üç satırı belirli ofsetlerle kaydırılır. Bu, **Difüzyon (Yayılma)** sağlar.
-3.  **MixColumns (Sütun Karıştırma)**: Sütunlar, Galois Alanı (Galois Field) matematiği ile birbirine karıştırılır.
-4.  **AddRoundKey (Anahtar Ekleme)**: O anki turun anahtarı, mevcut durum matrisi ile XOR işlemine sokulur.
+#### AES Nasıl Çalışır? (Adım Adım)
+Veri 128 bitlik (4x4 bayt) bloklar halinde işlenir. Her blok 4 aşamadan geçer:
 
-#### DES (Data Encryption Standard)
-AES'in atasıdır. Tarihsel önemini anlamak için Feistel ağ yapısı manuel olarak kodlanmıştır.
-- **Blok Boyutu**: 64 bit.
-- **Anahtar Boyutu**: 56 bit (Modern standartlara göre güvensizdir, kaba kuvvet saldırısı ile kırılabilir).
+1.  **SubBytes (Maskeleme)**: `S-Box` tablosu kullanılarak her bayt başka bir baytla değiştirilir.
+    *   *Amaç*: İstatistsel ilişkiyi bozmak (Non-linearity).
+2.  **ShiftRows (Karıştırma)**: Matris satırları sola doğru kaydırılır.
+    *   *Amaç*: Veriyi blok genelinde dağıtmak (Diffusion).
+3.  **MixColumns (Dönüştürme)**: Sütunlar, Galois Alanı ($GF(2^8)$) matematiği ile çarpılır.
+    *   *Amaç*: Tek bir bit değişirse, tüm bloğun değişmesini sağlamak.
+4.  **AddRoundKey (Kilitleme)**: O turun anahtarı ile XOR işlemi yapılır.
 
-### Asimetrik Şifreleme (RSA)
+### 🛡️ Asimetrik Kalkan: RSA-2048
+İki yabancının güvenli konuşabilmesi için "Açık Anahtar" (Public Key) kriptografisi kullanılır.
 
-#### RSA (Rivest–Shamir–Adleman)
-E2EE (Uçtan Uca Şifreleme) omurgamızdır. Anahtar paylaşım problemini çözer.
-- **Anahtar Üretimi**: İki devasa asal sayı ($p$ ve $q$) seçilir ve modül $n = p \times q$ hesaplanır. Hashchat'te bu $n$ sayısı 2048 bittir (yaklaşık 617 ondalık basamak).
-- **Şifreleme**: $c = m^e \pmod n$.
-- **Deşifreleme**: $m = c^d \pmod n$.
+**Matematiksel Kanıt:**
+RSA'nın güvenliği, iki çok büyük asal sayıyı çarpmanın kolay ($p \times q = n$), ancak çarpanlarına ayırmanın ($n \rightarrow p, q$) imkansız olması ilkesine dayanır.
 
-> **Biliyor muydunuz?**: RSA-2048'i kırmak için evrendeki atom sayısından daha fazla işlem gücü ve zaman gerekir.
+*   **Hashchat Parametreleri**:
+    *   Modulus ($n$): 2048 bit (617 ondalık basamak).
+    *   Padding: OAEP (Optimal Asymmetric Encryption Padding) - SHA256 ile.
 
 ---
 
-## 🏗️ Mimari 2.0: Sistem Tasarımı
+## 💾 Bölüm 4: Veri Kalıcılığı ve İstihbarat
 
-Versiyon 2.0 ile Hashchat, bir prototipten profesyonel bir platforma evrildi.
+Versiyon 2.0 ile Hashchat, profesyonel bir veri altyapısına kavuştu.
 
-### Ironclad Persistence (SQLite) 💾
-Kullanıcı kimlikleri artık kalıcıdır.
-- **Teknoloji**: **SQLAlchemy** ORM + **SQLite**.
-- **Fayda**: Sunucu yeniden başlatılsa bile kullanıcı hesapları ve açık anahtarlar (Public Keys) silinmez. `hashchat.db` dosyası tek gerçeklik kaynağıdır (Single Source of Truth).
-- **Şema**:
-    ```sql
-    CREATE TABLE users (
-        id INTEGER PRIMARY KEY,
-        username VARCHAR NOT NULL UNIQUE, -- Benzersiz kullanıcı adı
-        public_key VARCHAR NOT NULL       -- RSA Açık Anahtarı
-    );
-    ```
+### Ironclad Persistence (SQLite + SQLAlchemy)
+Eskiden sunucu kapanınca veriler uçardı. Artık **Kalıcı**.
+*   **ORM Yapısı**: SQL sorguları yazmak yerine Python sınıfları (Class) kullanılır.
+*   **Atomik İşlemler**: Bir veri ya tam yazılır ya hiç yazılmaz. Veri bütünlüğü garantidir.
 
-### Elite Intelligence (Loguru) 🧠
-Sistem sizinle konuşur. Tipik bir log akışı şöyle görünür:
-```
-2025-12-27 14:05:22 | INFO     | user_service:register:12 - Kayıt işlemi başlatıldı: neo
-2025-12-27 14:05:22 | SUCCESS  | database:add_user:28 - Kullanıcı veritabanına eklendi: neo
-2025-12-27 14:05:23 | DEBUG    | websocket:connect:45 - Bağlantı kabul edildi: 127.0.0.1:56432
+### Elite Intelligence (Loguru)
+Sistem sizinle konuşur. Konsol çıktısı bir "Matrix" ekranı gibidir:
+
+```log
+2025-12-27 14:05:22 | SUCCESS  | database:add_user - Ajan 'Neo' sisteme kaydedildi.
+2025-12-27 14:05:23 | WARNING  | auth:verify_signature - Geçersiz imza denemesi! IP: 192.168.1.5
+2025-12-27 14:05:24 | INFO     | crypto:exchange_keys - RSA Handshake tamamlandı.
 ```
 
 ---
 
-## 🛠️ Kurulum ve Operasyon
+## 🛠️ Bölüm 5: Saha Operasyonu (Kurulum)
 
-### Backend Kurulumu (Sinir Sistemi)
-Operasyonun beyni. Python 3.11+ gerektirir.
+Kendi komuta merkezinizi kurmaya hazır mısınız?
+
+### 🖥️ Backend Kurulumu (Terminal)
 
 ```bash
 # 1. Repoyu Klonlayın
 git clone https://github.com/bahattinyunus/Hashchat.git
 
-# 2. Sanal Ortam Oluşturun (Önerilen)
-python -m venv venv
-# Windows:
-.\venv\Scripts\activate
-# Mac/Linux:
-source venv/bin/activate
-
-# 3. Bağımlılıkları Yükleyin
-pip install -r Hashchat/Backend/requirements.txt
-
-# 4. Elit Sunucuyu Başlatın
+# 2. Sanal Ortama Geçiş Yapın
 cd Hashchat/Backend
+python -m venv venv
+source venv/bin/activate  # Windows: .\venv\Scripts\activate
+
+# 3. Mühimmatı Yükleyin (Bağımlılıklar)
+pip install -r requirements.txt
+
+# 4. Ateşleyin! 🔥
 uvicorn main:app --reload --host 0.0.0.0 --port 12345
 ```
-*Veritabanının otomatik olarak oluşturulduğunu (`hashchat.db`) ve logların akmaya başladığını göreceksiniz.*
 
-### Frontend Kurulumu (Arayüz)
-Operasyonun yüzü. macOS ve Xcode gerektirir.
-
-1. `Hashchat/Frontend/Hashchat.xcodeproj` dosyasını Xcode ile açın.
-2. Paket bağımlılıklarının (Swift Package Manager) yüklenmesini bekleyin.
-3. Simülatör seçin (Örn: iPhone 15 Pro).
-4. **Cmd + R** tuşuna basarak derleyin ve çalıştırın.
+### 📱 Frontend Kurulumu (Xcode)
+1. `Hashchat/Frontend/Hashchat.xcodeproj` dosyasını açın.
+2. Paketin yüklenmesini bekleyin.
+3. Hedef cihazı seçin (iPhone 15).
+4. **Cmd + R** ile operasyonu başlatın.
 
 ---
 
 ## 🤝 Katkıda Bulunma
+Bu proje açık kaynaktır ve topluluğun gücüyle büyür.
+*   Yeni bir şifreleme algoritması mı eklemek istiyorsun? (Örn: ChaCha20)
+*   Arayüzü daha da mı geliştirmek istiyorsun?
 
-Bir miras inşa ediyoruz. Bize katılın.
-- Hataları "Issues" sekmesinden bildirin.
-- Yeni özellikler için "Pull Request" gönderin (Örneğin: ChaCha20 algoritması eklemek ister misiniz?).
-- Katkı rehberi için [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.
+Rehberlerimizi okuyun: [CONTRIBUTING.md](CONTRIBUTING.md) ve [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ---
 
 ### 📜 Lisans
-Apache 2.0 - Açık Kaynak ve Sonsuza Kadar Özgür.
+Bu proje **Apache 2.0 Lisansı** ile korunmaktadır. Özgürce kullanın, değiştirin, öğrenin.
 
-> **"Karanlıktan korkmuyoruz. Biz bizzat ışığız."** - Hashchat Takımı
+> **"Karanlıkta çalışırız, ışığa hizmet ederiz."**
+<div align="center">
+  <sub>Hashchat Geliştirici Takımı © 2025</sub>
+</div>
