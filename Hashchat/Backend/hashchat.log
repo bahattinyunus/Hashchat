@@ -1,0 +1,31 @@
+2025-12-27 13:51:31.776 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:51:32.360 | INFO     | database.db:init_db:17 - Database tables created.
+2025-12-27 13:51:32.365 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:51:32.375 | INFO     | database.db:init_db:17 - Database tables created.
+2025-12-27 13:51:32.381 | INFO     | database.db:add_user:28 - User added: test_user_persistence
+2025-12-27 13:51:32.549 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:51:32.551 | INFO     | database.db:init_db:17 - Database tables created.
+2025-12-27 13:51:32.556 | INFO     | database.db:add_user:28 - User added: persistent_user
+2025-12-27 13:51:32.576 | DEBUG    | services.user_service:get_stats:52 - Fetching stats
+2025-12-27 13:51:47.655 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:51:47.659 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:51:47.660 | INFO     | database.db:init_db:17 - Database tables created.
+2025-12-27 13:51:47.666 | ERROR    | database.db:add_user:30 - Error adding user: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (username, public_key) VALUES (?, ?)]
+[parameters: ('test_user_persistence', 'public_key_123')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-12-27 13:51:48.248 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:51:48.249 | INFO     | database.db:init_db:17 - Database tables created.
+2025-12-27 13:51:48.251 | ERROR    | database.db:add_user:30 - Error adding user: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (username, public_key) VALUES (?, ?)]
+[parameters: ('persistent_user', 'persistent_key')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-12-27 13:53:04.788 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:53:33.171 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:53:33.171 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:53:33.182 | INFO     | database.db:init_db:17 - Database tables created.
+2025-12-27 13:53:33.201 | INFO     | database.db:add_user:28 - User added: manual_user
+2025-12-27 13:54:31.791 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:54:31.793 | INFO     | database.db:__init__:13 - Database initialized at sqlite:///./hashchat.db
+2025-12-27 13:54:31.803 | INFO     | database.db:init_db:17 - Database tables created.
+2025-12-27 13:54:31.822 | INFO     | database.db:add_user:28 - User added: manual_user

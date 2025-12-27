@@ -4,13 +4,19 @@ from routes.websocket import get_active_connections_count
 from services.user_service import user_service
 import uvicorn
 
+from database.db import db
+from core.logger import log
+
+# Initialize Database tables
+db.init_db()
+
 app = FastAPI(
     title="Hashchat",
     description=(
         "Real-time encrypted messaging server with WebSocket relay and RSA E2EE support.\n\n"
         "Supported ciphers: RSA (E2EE), AES, DES, Caesar, Vigenere, Columnar, Polybius, Pigpen, Hill, Rail Fence, Euclid, Rota."
     ),
-    version="2.0.0",
+    version="2.1.0",
 )
 
 
