@@ -3,7 +3,8 @@
 > **"Privacy is not a privilege, it is a mathematical certainty."**
 
 <div align="center">
-  <img src="https://github.com/eneseken95/Hashchat/blob/main/Hashchat/Frontend/Hashchat/App/Resources/Assets.xcassets/AppIcon.appiconset/Hashchat%202.png" alt="Hashchat Logo" width="160" height="160" />
+  <img src="assets/banner.png" alt="Hashchat Elite Banner" width="100%" />
+  <br/>
   <br/>
   <a href="https://github.com/bahattinyunus/Hashchat/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
   <a href="https://github.com/bahattinyunus/Hashchat/actions"><img src="https://img.shields.io/github/actions/workflow/status/bahattinyunus/Hashchat/ci.yml?branch=main" alt="CI Status"></a>
